@@ -9,8 +9,8 @@ def load_data(filepath):
     return file_contents
 
 
-def pretty_print_json(data):
-    print(json.dumps(json.loads(data), sort_keys=True, indent = 4, encoding="utf-8", ensure_ascii=False, separators = (',', ': ')))
+def pretty_print_json(json_contents):
+    print(json.dumps(json.loads(json_contents), sort_keys=True, indent = 4, encoding="utf-8", ensure_ascii=False, separators = (',', ': ')))
 
 
 if __name__ == '__main__':
@@ -19,6 +19,6 @@ if __name__ == '__main__':
         print('Usage python pprint_json.py filename')
         sys.exit(0)
 
-    data = load_data(sys.argv[1])
-    pretty_print_json(data)
+    json_contents = load_data(sys.argv[1])
+    pretty_print_json(json_contents)
     sys.exit(0)
